@@ -25,11 +25,12 @@
 
 .thumbnail
 {
-   background-color:black !important;
+   background-color:lightblue;
 }
 img
 {
    border-radius:10px !important;
+   width: 75%;
 }
 .caption
 {
@@ -49,7 +50,7 @@ img
 }
 .well-lg
 {
- background-color:black !important;
+ background-color:teal;
  color:orange !important;
 }
 .well-sm hr
@@ -58,7 +59,7 @@ img
 }
 .well-sm
 {
- background-color:black !important;
+ background-color:teal;
  color:orange !important;
 }
 .navbar-transparent li a:active {
@@ -88,17 +89,17 @@ display: none !important;
 }
 .transparentButton
 {
- color:white !important;
+ color:black;
  background-color:transparent !important;
 }
 .transparentButton:hover
 {
- color:orange !important;
+ color:black;
  background-color:transparent !important;
 }
 .disabledTransparentButton
 {
- color:orange !important;
+ color:red;
  background-color:transparent !important;
 }
 .navbar-toggle .icon-bar
@@ -123,7 +124,7 @@ display: none !important;
 .standardButton:hover
 {
  color:white !important;
- background-color:orange !important;
+ background-color:black;
 }
 .buttonLink
 {

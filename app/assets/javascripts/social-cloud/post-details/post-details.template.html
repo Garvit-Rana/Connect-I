@@ -1,8 +1,9 @@
 <div class="row" ng-repeat="post in $ctrl.postsInfo.posts">
-  <div class="col-sm-12 col-md-12 col-lg-12">
+  <div class="col-sm-10 col-md-10 col-lg-10" style="float: none;margin: 0 auto">
     <div class="thumbnail">
       <div class="caption">
-          <h4><span style="color:orange;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> {{ post.image_heading }}</span><hr> {{ post.image_caption }}</h4>
+          <h4><span style="color:black;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> <span style="color: black">{{ post.image_heading }}</span></span><hr>
+          <span style="color: black"> {{ post.image_caption }}</span></h4>
           <p><a ng-href="#" class="btn btn-default disabledTransparentButton disabled"  role="button"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Posted {{ post.time }} ago</a>
       </div>
       <img ng-src="data:{{ post.image_content_type }};base64,{{ post.image_base64 }}" alt="{{ post.image_caption }}">

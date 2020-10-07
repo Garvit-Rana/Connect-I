@@ -1,8 +1,8 @@
 <div class="row" style="margin:5%">
-  <div class="col-sm-12 col-md-12 col-lg-12">
+  <div class="col-sm-10 col-md-10 col-lg-10" style="float: none;margin: 0 auto">
     <div class="thumbnail">
       <div class="caption">
-          <h3><span style="color:orange;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> {{ $ctrl.post.image_heading }}</span><hr> {{ $ctrl.post.image_caption }}</h3>
+          <h3><span style="color:black;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span><span style="color: black"> {{ $ctrl.post.image_heading }}</span></span><hr> <span style="color: black">{{ $ctrl.post.image_caption }}</span></h3>
           <p><a ng-href="#" class="btn btn-default disabledTransparentButton disabled"  role="button"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Posted {{ $ctrl.post.time }} ago</a>
       </div>
       <img ng-src="data:{{ $ctrl.post.image_content_type }};base64,{{ $ctrl.post.image_base64 }}" alt="{{ $ctrl.post.image_caption }}">
