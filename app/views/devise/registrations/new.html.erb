@@ -1,0 +1,59 @@
+<div class="jumbotron" style="padding:10%;padding-top:1%;margin:10%;margin-top:0%;margin-bottom:0%;background:rgba(255,255,255,0.6);">
+<div class="page-header" style="margin-top:0;text-align:center;">
+  <h2><span class="glyphicon glyphicon-new-window" aria-hidden="true"></span> Sign Up</h2>
+</div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    <%= f.label :first_name %><br />
+    <%= f.text_field :first_name, autofocus: true, autocomplete: "first-name", class: "form-control", placeholder:"Enter First Name" %>
+  </div>
+
+  <div class="field">
+    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name, autofocus: true, autocomplete: "last-name", class: "form-control", placeholder:"Enter Last Name" %>
+  </div>
+
+  <div class="field">
+    <span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
+    <%= f.label :phone %><br />
+    <%= f.telephone_field :phone, autofocus: true, autocomplete: "phone", class: "form-control", placeholder:"Enter Phone Number" %>
+  </div>
+
+  <div class="field">
+    <span class="glyphicon glyphicon-inbox" aria-hidden="true"></span>
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder:"Enter Email" %>
+  </div>
+
+  <div class="field">
+    <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true, autocomplete: "username", class: "form-control", placeholder:"Enter User Name" %>
+  </div>
+
+  <div class="field">
+    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password", class: "form-control", placeholder:"Enter Password" %>
+  </div>
+
+  <div class="field">
+    <span class="glyphicon glyphicon-lock" aria-hidden="true"></span>
+    <%= f.label :password_confirmation, "Confirm Password" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder:"Enter Password Again" %>
+    <br>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign Up", class: "btn btn-default center-block standardButton", data: {confirm: "Confirmation..Submit the details?"} %>
+  </div>
+<% end %>
+<%# render "devise/shared/links" %>
+</div>

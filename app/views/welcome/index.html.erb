@@ -1,0 +1,54 @@
+<div class="jumbotron" style="padding:10%;padding-top:1%;margin-top:0%;margin-bottom:0%;background:rgba(255,255,255,0.6);">
+
+  <% if !user_signed_in? %>
+  <div style="text-align:center;">
+    <h1>Welcome!</h1>
+    <p style="text-align:center;">Join the website today and share your happy moments with your family and friends!</p>
+    <p><a class="btn btn-default btn-lg center-block standardButton" href="<%= new_user_registration_path %>" role="button">Create Account</a></p>
+  </div>
+  <hr>
+  <% else %>
+    <div class="page-header" style="margin-top:0;text-align:center;">
+        <h1><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Feed</h1>
+        <h2><small>You can now connect with your family and friends! Enjoy!</small></h2>
+    </div>
+  <% end %>
+
+  <% if user_signed_in? %>
+    <% if @posts.length >= 1 %>
+      <% for post in @posts %>
+        <div class="row">
+          <div class="col-sm-12 col-md-12 col-lg-12">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4><span style="color:orange;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> <%= post.image_heading %> | <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @users.where(id:post.user_id).to_a[0].first_name %> </span> <hr> <%= post.image_caption %></h4>
+                  <p><a href="#" class="btn btn-default disabledTransparentButton disabled"  role="button"><span class="glyphicon glyphicon-time" aria-hidden="true"></span> Posted <%= time_ago_in_words(post.time) %> ago</a>
+              </div>
+              <img src="data:<%= post.image_content_type %>;base64,<%= post.image_base64 %>" alt="<%= post.image_caption %>">
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      There are no posts right now!
+    <% end %>
+  <% else %>
+  <% if @posts.length >= 1 %>
+    <div class="row">
+      <% for post in @posts %>
+          <div class="col-sm-4 col-md-4 col-lg-4">
+            <div class="thumbnail">
+              <div class="caption">
+                  <h4><span style="color:orange;"><span class="glyphicon glyphicon-picture" aria-hidden="true"></span> <%= post.image_heading %> | <span class="glyphicon glyphicon-user" aria-hidden="true"></span> <%= @users.where(id:post.user_id).to_a[0].first_name %> </span> <hr> </h4>
+              </div>
+              <img src="data:<%= post.image_content_type %>;base64,<%= post.image_base64 %>" alt="<%= post.image_caption %>" style="height:300px;">
+            </div>
+          </div>
+      <% end %>
+    </div>
+    <hr>
+  <% else %>
+    There are no posts right now!
+  <% end %>
+  <% end %>
+</div>
